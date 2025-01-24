@@ -1,0 +1,123 @@
+/* styles.css */
+
+body {
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #E4E4E1;
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin: 10px auto;
+    width: 90%;
+    height: 85vh;
+
+  }
+  
+  .quadrant {
+    position: relative; /* Permite posicionar el título dentro del contenedor */
+    display: flex;
+    flex-direction: column; /* Alinea contenido verticalmente */
+    align-items: center;
+    justify-content: flex-start; /* Las habilidades comenzarán debajo del título */
+    padding-top: 50px; /* Espacio para que las habilidades no invadan el título */
+    color: rgb(252, 248, 248);
+   
+    border-radius: 10px;
+    padding: 10px;
+ 
+  }
+  
+
+  .core {
+    background-color: #0bc124;
+    border-right: 4px double white;
+    border-bottom: 3px solid rgb(0, 0, 0);
+    border-radius: 10px 0px 0px 0px;
+  }
+  
+  .future {
+    background-color: #2196f3;
+    border-left: 4px double rgb(255, 255, 255);
+    border-bottom: 3px solid rgb(0, 0, 0);
+    border-radius: 0px 10px 0px 0px;
+  }
+   
+  .past {
+    background-color: #ff9800;
+    border-right: 4px double white;
+    border-top: 3px solid rgb(11, 4, 4);
+    border-radius: 0px 0px 0px 10px;
+  }
+  
+  .avoid {
+    background-color: #f44336;
+    border-left: 4px double white;
+    border-top: 3px solid rgb(0, 0, 0);
+    border-radius: 0px 0px 10px 0px;
+  } 
+  
+  .skills-container {
+   
+    margin-top: 20px;
+  }
+  
+  .skill {
+    position: relative;
+    display: inline-block;
+    background-color: #090f3d;
+    margin: 5px;
+    padding: 10px 20px;
+   
+    border-radius: 10px;
+    cursor: grab;
+    user-select: none;
+    color: white;
+  }
+
+
+.skill:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #737373, blue, white, blue,#737373, blue, white, blue);
+    background-size: 800%;
+    border-radius: 12px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+}
+
+.skill:hover{
+    font-weight: 600;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+  
+  .skill:active {
+    cursor: grabbing;
+  }
+  
